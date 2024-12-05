@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\WorkspaceVisibility;
 use Illuminate\Database\Eloquent\Model;
 
 class workspace extends Model
@@ -15,4 +16,10 @@ class workspace extends Model
         'visibility'
 
     ];
+
+    protected function casts(): array {
+        return [
+            'visibility' => WorkspaceVisibility::class,
+        ];
+    }
 }
