@@ -41,5 +41,5 @@ export default function GetPriorityBadge({ priority }) {
             text = UNKNOWN;
     }
 
-    return <Badge className={badge}>{text}</Badge>
+    return <Badge className={badge}>{text}</Badge>;
 }

@@ -2,7 +2,7 @@ import { STATUS } from '@/lib/utils';
 import { Badge } from './ui/badge';
 
 export default function GetStatusBadge({ status }) {
-    const { TODO, INPROGRESS, ONREVIEW, DONE, UNKNOWN} = STATUS;
+    const { TODO, INPROGRESS, ONREVIEW, DONE, UNKNOWN } = STATUS;
 
     let badge, text;
 
@@ -41,5 +41,5 @@ export default function GetStatusBadge({ status }) {
             text = UNKNOWN;
     }
 
-    return <Badge className={badge}>{text}</Badge>
+    return <Badge className={badge}>{text}</Badge>;
 }

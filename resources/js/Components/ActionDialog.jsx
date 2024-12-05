@@ -9,7 +9,6 @@ import {
     AlertDialogTitle,
 } from '@/Components/ui/alert-dialog';
 
-
 export function ActionDialog({ trigger, action, title, description }) {
     return (
         <AlertDialog>
@@ -25,7 +24,6 @@ export function ActionDialog({ trigger, action, title, description }) {
                     <AlertDialogAction onClick={action}></AlertDialogAction>
                 </AlertDialogFooter>
             </AlertDialogContent>
-
         </AlertDialog>
     );
 }

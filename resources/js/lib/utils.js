@@ -30,5 +30,5 @@ export const PRIORITY = {
 };
 
 export function flashMassage(params) {
-    return params.props.flash_message
+    return params.props.flash_message;
 }
