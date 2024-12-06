@@ -63,7 +63,7 @@ export default function Login({ status, canResetPassword }) {
 
                                     <div>
                                         <div className="flex items-center justify-between">
-                                            <InputLabel htmlFor="password" value="password" />
+                                            <InputLabel htmlFor="password" value="Password" />
                                             {canResetPassword && (
                                                 <div className="text-sm">
                                                     <Link
@@ -85,7 +85,10 @@ export default function Login({ status, canResetPassword }) {
                                                 onChange={(e) => setData('password', e.target.value)}
                                                 onErrors={
                                                     errors.password && (
-                                                        <InputError className="mt-1 text-red-500" message={errors.password} />
+                                                        <InputError
+                                                            className="mt-1 text-red-500"
+                                                            message={errors.password}
+                                                        />
                                                     )
                                                 }
                                             />
@@ -104,10 +107,10 @@ export default function Login({ status, canResetPassword }) {
                                         </label>
                                     </div>
 
-                                    <div className=''>
-                                            <Button type='submit' variant='red' className='w-full' disable={processing}>
-                                                Sign In
-                                            </Button>
+                                    <div className="">
+                                        <Button type="submit" variant="red" className="w-full" disable={processing}>
+                                            Sign In
+                                        </Button>
                                     </div>
                                 </form>
 

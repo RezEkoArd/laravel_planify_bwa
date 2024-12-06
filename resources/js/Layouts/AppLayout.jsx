@@ -2,7 +2,7 @@ import { Avatar, AvatarFallback } from '@/Components/ui/avatar';
 import { Dialog, Transition } from '@headlessui/react';
 import { Head, Link } from '@inertiajs/react';
 import { Fragment, useState } from 'react';
-import { PiHouse, PiLockKeyOpen, PiPlus, PiSidebar, PiSquaresFour, PiUser, PiX } from 'react-icons/pi';
+import { PiSidebar, PiX } from 'react-icons/pi';
 import Sidebar from './Partials/Sidebar';
 import SidebarResponsive from './Partials/SidebarResponsive';
 
