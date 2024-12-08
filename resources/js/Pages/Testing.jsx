@@ -1,9 +1,7 @@
 import AppLayout from '@/Layouts/AppLayout';
 
 export default function testing() {
-    return (
-        <AppLayout>
-            <h1>Testing Pages</h1>
-        </AppLayout>
-    );
+    return <div>This is testing. Lorem ipsum dolor sit amet consectetur.</div>;
 }
+
+testing.layout = (page) => <AppLayout children={page} title={'Testing'} />;
