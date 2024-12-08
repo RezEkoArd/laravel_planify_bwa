@@ -72,12 +72,14 @@ export default function Sidebar({ auth, url }) {
 
                         <li>
                             <Link
-                                href="#"
+                                href={route('logout')}
+                                method='post'
+                                as='button'
                                 className={cn(
                                     url.startsWith('/logout')
                                         ? 'bg-red-500 text-white'
                                         : 'hover-bg-gray-100 text-foreground',
-                                    'leading relaxed group flex gap-x-3 rounded-md p-3 text-sm font-semibold',
+                                    'w-full leading relaxed group flex gap-x-3 rounded-md p-3 text-sm font-semibold',
                                 )}
                             >
                                 <PiLockKeyOpen

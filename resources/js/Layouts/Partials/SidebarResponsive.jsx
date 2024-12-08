@@ -22,7 +22,7 @@ export default function SidebarResponsive({ auth, url }) {
                                         url.startsWith('/dashboard')
                                             ? 'bg-red-500 text-white'
                                             : 'text-foreground hover:bg-gray-100',
-                                        'ledaing-relaxed group flex gap-x-3 rounded-md p-3 text-sm font-semibold',
+                                        'group flex gap-x-3 rounded-md p-3 text-sm font-semibold leading-relaxed',
                                     )}
                                 >
                                     <PiHouse
@@ -42,7 +42,7 @@ export default function SidebarResponsive({ auth, url }) {
                                         url.startsWith('/users')
                                             ? 'bg-red-500 text-white'
                                             : 'text-foreground hover:bg-gray-100',
-                                        'ledaing-relaxed group flex gap-x-3 rounded-md p-3 text-sm font-semibold',
+                                        'group flex gap-x-3 rounded-md p-3 text-sm font-semibold leading-relaxed',
                                     )}
                                 >
                                     <PiUser
@@ -62,7 +62,7 @@ export default function SidebarResponsive({ auth, url }) {
                                         url.startsWith('/my-tasks')
                                             ? 'bg-red-500 text-white'
                                             : 'text-foreground hover:bg-gray-100',
-                                        'ledaing-relaxed group flex gap-x-3 rounded-md p-3 text-sm font-semibold',
+                                        'group flex gap-x-3 rounded-md p-3 text-sm font-semibold leading-relaxed',
                                     )}
                                 >
                                     <PiSquaresFour
@@ -77,12 +77,14 @@ export default function SidebarResponsive({ auth, url }) {
 
                             <li>
                                 <Link
-                                    href="#"
+                                    href={route('logout')}
+                                    method="post"
+                                    as="button"
                                     className={cn(
                                         url.startsWith('/logout')
                                             ? 'bg-red-500 text-white'
                                             : 'text-foreground hover:bg-gray-100',
-                                        'ledaing-relaxed group flex gap-x-3 rounded-md p-3 text-sm font-semibold',
+                                        'group flex w-full gap-x-3 rounded-md p-3 text-sm font-semibold leading-relaxed',
                                     )}
                                 >
                                     <PiLockKeyOpen
