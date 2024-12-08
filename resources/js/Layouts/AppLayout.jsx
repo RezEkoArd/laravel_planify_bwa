@@ -11,7 +11,8 @@ export default function AppLayout({ children, title }) {
 
     // Ambil data dari Auth middleware Inertia
     const auth = usePage().props.auth.user;
-    // console.log(auth)
+
+    const { url } = usePage();
 
     return (
         <>
@@ -63,7 +64,7 @@ export default function AppLayout({ children, title }) {
                                         </div>
                                     </Transition.Child>
                                     {/* Sidebar Responsive */}
-                                    <SidebarResponsive auth={auth} />
+                                    <SidebarResponsive auth={auth} url={url} />
                                 </Dialog.Panel>
                             </Transition.Child>
                         </div>
@@ -81,7 +82,7 @@ export default function AppLayout({ children, title }) {
                             </Link>
                         </div>
                         {/* Sidebar */}
-                        <Sidebar auth={auth} />
+                        <Sidebar auth={auth} url={url} />
                     </div>
                 </div>
 

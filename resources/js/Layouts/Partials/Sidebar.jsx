@@ -1,8 +1,9 @@
 import { Avatar, AvatarFallback } from '@/Components/ui/avatar';
+import { cn } from '@/lib/utils';
 import { Link } from '@inertiajs/react';
 import { PiHouse, PiLockKeyOpen, PiPlus, PiSquaresFour, PiUser } from 'react-icons/pi';
 
-export default function Sidebar({ auth }) {
+export default function Sidebar({ auth, url }) {
     return (
         <nav className="flex flex-1 flex-col">
             <ul role="list" className="flex flex-1 flex-col gap-y-7">
@@ -11,10 +12,20 @@ export default function Sidebar({ auth }) {
                         {/* menu */}
                         <li>
                             <Link
-                                href="#"
-                                className="group flex gap-x-3 rounded-md p-3 text-sm font-semibold leading-relaxed tracking-tighter text-foreground hover:bg-gray-100"
+                                href={route('dashboard')}
+                                className={cn(
+                                    url.startsWith('/dashboard')
+                                        ? 'bg-red-500 text-white'
+                                        : 'hover-bg-gray-100 text-foreground',
+                                    'leading relaxed group flex gap-x-3 rounded-md p-3 text-sm font-semibold',
+                                )}
                             >
-                                <PiHouse className="h-6 w-6 shrink-0 text-foreground" />
+                                <PiHouse
+                                    className={cn(
+                                        url.startsWith('/dashboard') ? 'text-white' : 'text-foreground',
+                                        'h-6 w-6 shrink-0',
+                                    )}
+                                />
                                 Dashboard
                             </Link>
                         </li>
@@ -22,9 +33,19 @@ export default function Sidebar({ auth }) {
                         <li>
                             <Link
                                 href="#"
-                                className="group flex gap-x-3 rounded-md p-3 text-sm font-semibold leading-relaxed tracking-tighter text-foreground hover:bg-gray-100"
+                                className={cn(
+                                    url.startsWith('/user')
+                                        ? 'bg-red-500 text-white'
+                                        : 'hover-bg-gray-100 text-foreground',
+                                    'leading relaxed group flex gap-x-3 rounded-md p-3 text-sm font-semibold',
+                                )}
                             >
-                                <PiUser className="h-6 w-6 shrink-0 text-foreground" />
+                                <PiUser
+                                    className={cn(
+                                        url.startsWith('/user') ? 'text-white' : 'text-foreground',
+                                        'h-6 w-6 shrink-0',
+                                    )}
+                                />
                                 People
                             </Link>
                         </li>
@@ -32,9 +53,19 @@ export default function Sidebar({ auth }) {
                         <li>
                             <Link
                                 href="#"
-                                className="group flex gap-x-3 rounded-md p-3 text-sm font-semibold leading-relaxed tracking-tighter text-foreground hover:bg-gray-100"
+                                className={cn(
+                                    url.startsWith('/my-tasks')
+                                        ? 'bg-red-500 text-white'
+                                        : 'hover-bg-gray-100 text-foreground',
+                                    'leading relaxed group flex gap-x-3 rounded-md p-3 text-sm font-semibold',
+                                )}
                             >
-                                <PiSquaresFour className="h-6 w-6 shrink-0 text-foreground" />
+                                <PiSquaresFour
+                                    className={cn(
+                                        url.startsWith('/my-tasks') ? 'text-white' : 'text-foreground',
+                                        'h-6 w-6 shrink-0',
+                                    )}
+                                />
                                 My Tasks
                             </Link>
                         </li>
@@ -42,9 +73,19 @@ export default function Sidebar({ auth }) {
                         <li>
                             <Link
                                 href="#"
-                                className="group flex gap-x-3 rounded-md p-3 text-sm font-semibold leading-relaxed tracking-tighter text-foreground hover:bg-gray-100"
+                                className={cn(
+                                    url.startsWith('/logout')
+                                        ? 'bg-red-500 text-white'
+                                        : 'hover-bg-gray-100 text-foreground',
+                                    'leading relaxed group flex gap-x-3 rounded-md p-3 text-sm font-semibold',
+                                )}
                             >
-                                <PiLockKeyOpen className="h-6 w-6 shrink-0 text-foreground" />
+                                <PiLockKeyOpen
+                                    className={cn(
+                                        url.startsWith('/logout') ? 'text-white' : 'text-foreground',
+                                        'h-6 w-6 shrink-0',
+                                    )}
+                                />
                                 Log Out
                             </Link>
                         </li>
