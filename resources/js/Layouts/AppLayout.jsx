@@ -1,6 +1,6 @@
 import { Avatar, AvatarFallback } from '@/Components/ui/avatar';
 import { Dialog, Transition } from '@headlessui/react';
-import { Head, Link } from '@inertiajs/react';
+import { Head, Link, usePage } from '@inertiajs/react';
 import { Fragment, useState } from 'react';
 import { PiSidebar, PiX } from 'react-icons/pi';
 import Sidebar from './Partials/Sidebar';
@@ -8,6 +8,10 @@ import SidebarResponsive from './Partials/SidebarResponsive';
 
 export default function AppLayout({ children, title }) {
     const [sidebarOpen, setSidebarOpen] = useState(false);
+
+    // Ambil data dari Auth middleware Inertia
+    const auth = usePage().props.auth.user;
+    // console.log(auth)
 
     return (
         <>
@@ -59,7 +63,7 @@ export default function AppLayout({ children, title }) {
                                         </div>
                                     </Transition.Child>
                                     {/* Sidebar Responsive */}
-                                    <SidebarResponsive />
+                                    <SidebarResponsive auth={auth} />
                                 </Dialog.Panel>
                             </Transition.Child>
                         </div>
@@ -77,7 +81,7 @@ export default function AppLayout({ children, title }) {
                             </Link>
                         </div>
                         {/* Sidebar */}
-                        <Sidebar />
+                        <Sidebar auth={auth} />
                     </div>
                 </div>
 
